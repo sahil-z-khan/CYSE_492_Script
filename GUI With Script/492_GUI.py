@@ -9,17 +9,25 @@ class Program(QDialog):
     def __init__(self): #Main Header
         super(Program,self).__init__()
         #Load the UI into the python
-        loadUi(r'492_GUI.ui',self)
+        loadUi(r'GUI With Script\492_GUI.ui',self)
         
         #Connect the buttons to the main functionality
         #push_Parse ~ Name of button on designer.exe
-        #on_click ~ Name of method that contains action 
-        self.push_Parse.clicked.connect(self.on_click)
+        #nmap_Scan ~ Name of method that contains action 
+        self.nmap_Push.clicked.connect(self.nmap_Scan)
         
+        self.db_Push.clicked.connect(self.db_scan)
+        
+        self.nikto_Push.clicked.connect(self.nikto_scan)
 
-    def on_click(self): #Method Parsing Through Excel
+    def nmap_Scan(self): #Method to Conduct NMAP Scan
         print("Button Works")
+    
+    def db_scan(self): #Method to Conduct Dirbuster Scan
+        print('Button Works')
 
+    def nikto_scan(self): #Method to Conduct Dirbuster Scan
+        print('Button Works')
 
 app=QApplication(sys.argv)
 mainwindow=Program()
